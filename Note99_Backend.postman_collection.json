@@ -1,0 +1,186 @@
+{
+	"info": {
+		"_postman_id": "note99-backend-collection",
+		"name": "Note99 Backend API",
+		"description": "Complete CRUD operations for Note99 Backend API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Health Check",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/api/health",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"health"
+					]
+				},
+				"description": "Check if the server is running"
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Notes",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/api/notes",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"notes"
+					]
+				},
+				"description": "Retrieve all notes from the database"
+			},
+			"response": []
+		},
+		{
+			"name": "Get Single Note",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/api/notes/:id",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"notes",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "1",
+							"description": "Note ID"
+						}
+					]
+				},
+				"description": "Retrieve a specific note by ID"
+			},
+			"response": []
+		},
+		{
+			"name": "Create New Note",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"title\": \"My First Note\",\n    \"content\": \"This is the content of my first note.\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/api/notes",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"notes"
+					]
+				},
+				"description": "Create a new note with title and content"
+			},
+			"response": []
+		},
+		{
+			"name": "Update Note",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"title\": \"Updated Note Title\",\n    \"content\": \"This is the updated content of the note.\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/api/notes/:id",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"notes",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "1",
+							"description": "Note ID"
+						}
+					]
+				},
+				"description": "Update an existing note by ID"
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Note",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/api/notes/:id",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"notes",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "1",
+							"description": "Note ID"
+						}
+					]
+				},
+				"description": "Delete a note by ID"
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "http://localhost:5000",
+			"type": "string"
+		}
+	]
+}
+
