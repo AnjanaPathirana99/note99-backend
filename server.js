@@ -76,8 +76,8 @@ app.delete('/api/notes/:id', async (req, res) => {
 });
 
 // Test database connection on startup
-app.listen(PORT, '127.0.0.1', async () => {
-    console.log(`Server running on http://127.0.0.1:${PORT}`);
+app.listen(PORT, async () => {
+    console.log(`Server running on ${PORT}`);
     try {
         await db.query('SELECT 1');
         console.log('✅ Database connection verified');
